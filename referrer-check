@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      const ref = document.referrer;
+      const allowed = "https://sites.google.com/onyespeaks.com/test-site/home";
+
+      if (ref && ref.startsWith(allowed)) {
+        parent.postMessage({ refCheck: true }, "*");
+      } else {
+        parent.postMessage({ refCheck: false, debugRef: ref }, "*");
+      }
+    </script>
+  </body>
+</html>
